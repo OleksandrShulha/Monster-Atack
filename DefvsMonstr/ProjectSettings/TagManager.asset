@@ -13,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Test
+  - Ground
   - 
   - 
   - 
@@ -42,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 1503690275
+    locked: 0
+  - name: DecorGround
+    uniqueID: 2591310249
+    locked: 0
+  - name: Playr
+    uniqueID: 2869560285
+    locked: 0
+  - name: Tree
+    uniqueID: 4152557471
     locked: 0
