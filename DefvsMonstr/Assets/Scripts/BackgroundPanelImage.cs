@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BackgroundPanelImage : MonoBehaviour
 {
     [SerializeField] Sprite[] backgroundImage;
+    private int maxActiveChild = 8;
     
     private void Start()
     {
@@ -18,6 +19,8 @@ public class BackgroundPanelImage : MonoBehaviour
         SetActivePanelSize();
     }
 
+
+    //Розмір панелі підложки для вибору бійців на рівні в залежності від кількості активованих
     public void SetActivePanelSize()
     {
         int activeChild = 0;
@@ -30,7 +33,19 @@ public class BackgroundPanelImage : MonoBehaviour
             }
         }
         //Debug.Log(activeChild);
-        transform.GetComponent<Image>().sprite = backgroundImage[activeChild - 1];
+        if (activeChild == 0)
+        {
+            Debug.Log("ноль активных героев");
+        }
+        else if (activeChild <= maxActiveChild)
+        {
+            transform.GetComponent<Image>().sprite = backgroundImage[activeChild - 1];
+        }
+        else
+        {
+            transform.GetComponent<Image>().sprite = backgroundImage[maxActiveChild-1];
+        }
         transform.GetComponent<Image>().SetNativeSize();
+
     }
 }
