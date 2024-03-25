@@ -18,7 +18,8 @@ public class MoneyGenerator : MonoBehaviour
         rt = moneyDarkImage.GetComponent<RectTransform>();
     }
 
-    private void Start()
+
+    public void StartMoneyGenerator()
     {
         MoneyOnStartLevel();
     }

@@ -7,11 +7,8 @@ public class ChooseWarior : MonoBehaviour
 {
     [SerializeField] private bool isActive = false;
     [SerializeField] Button btn;
-    ActiveBtn activeBtn;
 
-
-
-    public void ClickBtn(int index)
+    public void ClickBtn()
     {
         isActive = !isActive;
         Image img = btn.GetComponent<Image>();

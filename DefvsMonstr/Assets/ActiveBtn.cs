@@ -7,19 +7,15 @@ public class ActiveBtn : MonoBehaviour
 {
     [SerializeField] Button[] bts;
     [SerializeField] GameObject[] panel;
-    int countActiveBtn;
-    BackgroundPanelImage bgimg;
+    private int countActiveBtn=0;
+    [SerializeField] GameObject SoldierPanel;
 
-    void Start()
+
+    public int GetCountActiveBtn()
     {
-        
+        return countActiveBtn;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void CountActiveBtn()
     {
@@ -32,7 +28,6 @@ public class ActiveBtn : MonoBehaviour
                 countActiveBtn++;
             }
         }
-        Debug.Log("Активных кнопок: " + countActiveBtn);
 
         if(countActiveBtn >= 8)
         {
@@ -72,8 +67,12 @@ public class ActiveBtn : MonoBehaviour
                 panel[i].gameObject.SetActive(true);
             }
         }
+        SoldierPanel.GetComponent<BackgroundPanelImage>().SetActivePanelSize();
+        FindAnyObjectByType<MoneyGenerator>().StartMoneyGenerator();
 
-       
+
+        gameObject.SetActive(false);
+
     }
 
 

@@ -8,21 +8,18 @@ public class BackgroundPanelImage : MonoBehaviour
     [SerializeField] Sprite[] backgroundImage;
     private int maxActiveChild = 8;
     
+    
     private void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        SetActivePanelSize();
+        gameObject.SetActive(false);
     }
 
 
     //Розмір панелі підложки для вибору бійців на рівні в залежності від кількості активованих
     public void SetActivePanelSize()
     {
+        gameObject.SetActive(true);
+
         int activeChild = 0;
 
         foreach (Transform child in gameObject.transform)
@@ -32,10 +29,10 @@ public class BackgroundPanelImage : MonoBehaviour
                 activeChild++;
             }
         }
-        //Debug.Log(activeChild);
+
         if (activeChild == 0)
         {
-            Debug.Log("ноль активных героев");
+            
         }
         else if (activeChild <= maxActiveChild)
         {
